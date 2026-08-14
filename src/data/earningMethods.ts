@@ -50,8 +50,13 @@ export const earningMethods: EarningMethod[] = [
         id: "flights",
         name: "Flights (SAS)",
         group: "Travel",
-        summary: "Flight earnings depend on booking class and route. Start by using official tables/calculators.",
-        rules: ["Use SAS booking class tables for exact earnings", "We can integrate a flight calculator later"],
+        summary: "Flight earnings depend on ticket type, booking class, and route zone (Domestic/Scandinavia vs Europe).",
+        rules: [
+            "Lookup table effective from 2025-10-01: see flightLevelPoints.ts (FLIGHT_LEVEL_POINTS)",
+            "Domestic/Scandinavia: upgrade adds 250 Level Points on top of the base fare",
+            "Europe: upgrade adds 500 Level Points on top of the base fare",
+            "We can integrate a flight calculator into the planner later",
+        ],
     },
     {
         id: "car-rental",
