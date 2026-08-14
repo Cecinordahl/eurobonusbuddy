@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { AccountMenu } from "../../features/auth/AccountMenu";
 import { useAuth } from "../../features/auth/useAuth";
 
 export function NavBar() {
@@ -8,25 +9,28 @@ export function NavBar() {
         <header className="navbar">
             <div className="container navbar-inner">
                 <div className="brand">SAS Status Planner</div>
-                <nav className="navlinks">
-                    <NavLink to="/" end className={({ isActive }) => (isActive ? "active" : "")}>
-                        Planner
-                    </NavLink>
-                    <NavLink to="/methods" className={({ isActive }) => (isActive ? "active" : "")}>
-                        Methods
-                    </NavLink>
-                    <NavLink to="/compare" className={({ isActive }) => (isActive ? "active" : "")}>
-                        Compare
-                    </NavLink>
-                    <NavLink to="/rules" className={({ isActive }) => (isActive ? "active" : "")}>
-                        Rules
-                    </NavLink>
-                    {user && (
-                        <NavLink to="/tracker" className={({ isActive }) => (isActive ? "active" : "")}>
-                            Tracker
+                <div className="row" style={{ gap: 16 }}>
+                    <nav className="navlinks">
+                        <NavLink to="/" end className={({ isActive }) => (isActive ? "active" : "")}>
+                            Planner
                         </NavLink>
-                    )}
-                </nav>
+                        <NavLink to="/methods" className={({ isActive }) => (isActive ? "active" : "")}>
+                            Methods
+                        </NavLink>
+                        <NavLink to="/compare" className={({ isActive }) => (isActive ? "active" : "")}>
+                            Compare
+                        </NavLink>
+                        <NavLink to="/rules" className={({ isActive }) => (isActive ? "active" : "")}>
+                            Rules
+                        </NavLink>
+                        {user && (
+                            <NavLink to="/tracker" className={({ isActive }) => (isActive ? "active" : "")}>
+                                Tracker
+                            </NavLink>
+                        )}
+                    </nav>
+                    <AccountMenu />
+                </div>
             </div>
         </header>
     );
