@@ -3,6 +3,7 @@ import PlannerPage from "../pages/PlannerPage";
 import MethodsPage from "../pages/MethodsPage";
 import ComparePage from "../pages/ComparePage";
 import RulesPage from "../pages/RulesPage";
+import TrackerPage from "../pages/TrackerPage";
 
 export function AppRoutes() {
     return (
@@ -11,6 +12,7 @@ export function AppRoutes() {
             <Route path="/methods" element={<MethodsPage />} />
             <Route path="/compare" element={<ComparePage />} />
             <Route path="/rules" element={<RulesPage />} />
+            <Route path="/tracker" element={<TrackerPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
     );
