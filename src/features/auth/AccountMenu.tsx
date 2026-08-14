@@ -1,10 +1,22 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { PersonIcon } from "./icons";
 import { useAuth } from "./useAuth";
 
 export function AccountMenu() {
     const { user, loading, isAllowed, signIn, signOut } = useAuth();
     const [open, setOpen] = useState(false);
+    const menuRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (!open) return;
+        function handleClickOutside(e: MouseEvent) {
+            if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+                setOpen(false);
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, [open]);
 
     if (loading) return null;
 
@@ -22,7 +34,7 @@ export function AccountMenu() {
     }
 
     return (
-        <div className="account-menu">
+        <div className="account-menu" ref={menuRef}>
             <button
                 className={`icon-button secondary ${isAllowed ? "accent" : ""}`}
                 aria-label="Account menu"

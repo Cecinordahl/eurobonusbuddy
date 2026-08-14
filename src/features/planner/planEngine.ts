@@ -1,4 +1,4 @@
-import type { OptimizeFor, PlannerInput } from "./PlannerProvider.tsx";
+import type { OptimizeFor, PlannerInput } from "./plannerTypes";
 import type { Plan, PlanAction, PlanContext } from "./planEngineTypes";
 import { buyLevelPointsAction } from "./generators/buyLevelPoints";
 import { carRentalAction, CAR_RENTAL_OPTIONS } from "./generators/carRental";
