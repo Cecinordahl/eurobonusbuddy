@@ -100,7 +100,7 @@ export function PlannerForm() {
 
 
             <div className="row" style={{ marginTop: 10 }}>
-                <button onClick={generate}>Generate plans</button>
+                <button className="primary" onClick={generate}>Generate plans</button>
             </div>
 
             <p className="muted" style={{ marginTop: 10 }}>

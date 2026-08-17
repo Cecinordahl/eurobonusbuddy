@@ -75,7 +75,7 @@ export function TrackerView() {
                         />
                     </div>
                     <div className="row">
-                        <button onClick={() => void handleAddPeriod()}>Create period</button>
+                        <button className="primary" onClick={() => void handleAddPeriod()}>Create period</button>
                         <button className="secondary" onClick={() => setShowAddPeriod(false)}>
                             Cancel
                         </button>

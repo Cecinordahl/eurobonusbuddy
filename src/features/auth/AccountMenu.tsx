@@ -23,7 +23,7 @@ export function AccountMenu() {
     if (!user) {
         return (
             <button
-                className="icon-button secondary"
+                className="icon-button avatar-button"
                 aria-label="Sign in with Google"
                 title="Sign in with Google"
                 onClick={() => void signIn()}
@@ -36,7 +36,7 @@ export function AccountMenu() {
     return (
         <div className="account-menu" ref={menuRef}>
             <button
-                className={`icon-button secondary ${isAllowed ? "accent" : ""}`}
+                className={`icon-button avatar-button ${isAllowed ? "accent" : ""}`}
                 aria-label="Account menu"
                 title={user.email ?? "Account"}
                 onClick={() => setOpen((o) => !o)}

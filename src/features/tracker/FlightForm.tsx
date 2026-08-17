@@ -120,7 +120,7 @@ export function FlightForm({ onAdd }: { onAdd: (entry: FlightEntry) => void }) {
                     </span>
                     <span className="pill">{levelPoints ?? "—"} pts</span>
                 </label>
-                <button onClick={handleAdd}>Add flight</button>
+                <button className="primary" onClick={handleAdd}>Add flight</button>
             </div>
         </div>
     );
